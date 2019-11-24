@@ -1,0 +1,14 @@
+<%- include('menu'); -%>
+<h1>searched cars</h1>
+
+<ul>
+    <%
+    for(let i=0;i < cars.length;i++) 
+    {
+    %>
+    <li><%= cars[i].make %></li>
+    <%
+    }
+    %>
+</ul>
+

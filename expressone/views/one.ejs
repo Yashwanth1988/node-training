@@ -1,0 +1,15 @@
+<%- include('menu'); -%>
+<h1>This is EJS html : <%= name %></h1>
+<h1>cars : <%= cars %></h1>
+
+<ul>
+    <%
+    for(let i=0;i < cars.length;i++) 
+    {
+    %>
+    <li><%= cars[i].make %></li>
+    <%
+    }
+    %>
+</ul>
+
