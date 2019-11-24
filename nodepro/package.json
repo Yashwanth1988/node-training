@@ -1,0 +1,16 @@
+{
+  "name": "nodepro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon httptwo.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.1",
+    "yargs": "^15.0.2"
+  }
+}
