@@ -1,0 +1,21 @@
+mongo db - runs on port 27017
+
+mkdir <folder_name> // PSLStore is a folder that stores all db stuff
+mongodb --dppath <path_to_folder_name> // sets path that runs all the commands of mongo here.
+
+
+1. navigate to  mongo's bin path
+    - mkdir PSLStore // PSLStore is a folder that stores all db stuff
+    - mongodb --dppath PSLStore // sets path that runs all the commands of mongo here.
+
+note : PSLStore is a folder that can be anywhere
+
+
+2. Now open another cmd  - and navigate to  mongo's bin path
+    - keep the server open in the other window - means mongo db is running
+    - run mongo
+    - opens its cli
+    - show dbs;
+    - use psldb; // creates a new db
+    - db.products.insert({code: '11', name: 'Marker', price: '25'}); // inserts a document to collection (products)
+    - db.products.find() // displyes recodes inserted.
