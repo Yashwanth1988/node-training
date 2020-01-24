@@ -3,7 +3,7 @@ const app = express();
 const io = require('socket.io');
 
 const server = app.listen(3000,()=>{
-    console.log('Server is up !!!!');
+    console.log('Server is up !!!! and running at 3000 port');
 });
 
 const socket = io(server);
