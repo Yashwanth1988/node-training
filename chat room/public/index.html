@@ -10,22 +10,45 @@
         var socket = io.connect("http://localhost:3000");
         socket.on('resp',(resp)=>{
             let p = document.createElement('p');
-            p.textContent = resp;
+            p.textContent = `${resp.replace(person+':', 'You:')}`;
             document.querySelector('#wx').append(p);
         })
         function send() {
             let msg = document.querySelector("#msg").value;
             //alert(msg);
-            socket.emit('data',msg);
+            socket.emit('data',`${person}: ${msg}`);
+            document.querySelector("#msg").value = ''
         }
+
+       
+        var person = ''
+        function setChatPerson(){
+            var welcome = document.querySelector("#welcome")
+            person = document.querySelector("#chat-person").value
+            welcome.innerHTML = `Welcome ${person}`
+            document.querySelector('#chat-info').style.display = 'none'
+            document.querySelector('#chat-box').style.display = 'block'
+        }
+
+        document.addEventListener('DOMContentLoaded', function(){
+            document.querySelector('#chat-box').style.display = 'none'
+        })
+
     </script>
 </head>
 <body>
   <h2>Chat Application</h2>  
+  <div id="chat-info">
+  <input type="text" id="chat-person" />
+  <button onclick="setChatPerson()">Set</button>
+</div>
+  <h1 id="welcome"></h1>
   <div id="wx">
 
   </div>
+  <div id="chat-box">
   <input type="text" size="20" id="msg" name="msg"/>
   <button onclick="send();">Send</button>
+</div>
 </body>
 </html> 
